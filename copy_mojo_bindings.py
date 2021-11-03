@@ -7,7 +7,7 @@ import sys
 base_path = sys.argv[1]
 for path, dirs, files in os.walk(base_path):
   for file in files:
-    if file == 'mojo_bindings.js':
+    if file == 'mojo_bindings.js' or file == 'mojo_bindings_lite.js':
       shutil.copyfile(os.path.join(path, file), os.path.join('./', file))
     
     if file.endswith('.mojom.js') or file.endswith('.mojom-lite.js') or file.endswith('.mojom.m.js'):
